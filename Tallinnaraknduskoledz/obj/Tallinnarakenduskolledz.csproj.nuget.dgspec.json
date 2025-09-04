@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz.csproj": {}
+    "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz.csproj": {
+    "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz.csproj",
+        "projectUniqueName": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj",
         "projectName": "Tallinnarakenduskolledz",
-        "projectPath": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz.csproj",
+        "projectPath": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj",
         "packagesPath": "C:\\Users\\saimo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\Tallinnarakenduskolledz\\obj\\",
+        "outputPath": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,32 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.19, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

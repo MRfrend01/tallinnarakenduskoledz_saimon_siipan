@@ -2,13 +2,14 @@
 
 namespace Tallinnarakenduskolledz.Models
 {
-    public class students
+    public class Student
+
     {
         [Key]
         public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public DateTime Enrollmentdate { get; set; }
+        public DateTime EnrollmentDate { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; }
 
         // lisame kolm omandust õpilase ise mõtlen välja
