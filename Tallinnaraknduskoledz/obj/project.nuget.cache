@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Lg/Wh97WUo=",
+  "dgSpecHash": "aqFcOy6Rp+E=",
   "success": true,
-  "projectFilePath": "C:\\Users\\saimo\\source\\repos\\Tallinnarakenduskolledz\\git\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj",
+  "projectFilePath": "C:\\Users\\saimo\\Documents\\peekon\\tallinnarakenduskoledz_saimon_siipan\\Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saimo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\saimo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
