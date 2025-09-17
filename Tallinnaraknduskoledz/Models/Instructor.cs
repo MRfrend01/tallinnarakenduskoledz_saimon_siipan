@@ -31,7 +31,9 @@ namespace Tallinnarakenduskolledz.Models
         public ICollection<CourseAssignment>? CourseAssignments { get; set; }
         public OfficeAssignment? OfficeAssignment { get; set; }
         // lisan ise 3 omadust
+        public string TypeOfClass { get; set; }
+        public string homes { get; set; }
+        public string AmountOfCars { get; set; }
 
-        
     }
 }

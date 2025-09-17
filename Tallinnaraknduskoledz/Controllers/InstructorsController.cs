@@ -5,13 +5,14 @@ using Tallinnarakenduskolledz.Models;
 
 namespace Tallinnarakenduskolledz.Controllers
 {
-    public class InstructorsControllers : Controller
+    public class InstructorsController : Controller
     {
         private readonly SchoolContext _context;
-        public InstructorsControllers(SchoolContext context)
+        public InstructorsController(SchoolContext context)
         {
             _context = context;
         }
+        [HttpGet]
         public async Task<IActionResult> Index(int? id, int? courseid)
         {
             var vm = new InstructorIndexData();

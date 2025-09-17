@@ -44,6 +44,24 @@
                 <td>@Html.DisplayFor(modelItem => instructor.FirstName)</td>
                 <td>@Html.DisplayFor(modelItem => instructor.LastName)</td>
                 <td>@Html.DisplayFor(modelItem => instructor.HireDate)</td>
+                <td>
+                    @if (instructor.OfficeAssignment != null)
+                    {
+                        @instructor.OfficeAssignment.Location
+                    }
+                </td>
+                <td>
+                    @foreach (var course in instructor.CourseAssignments)
+                    {
+                        @course.Course.CourseID @: @course.Course.Title <br/>
+                    }
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => instructor.AmountOfCars)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@instructor.InstructorID">Muuda</a> |
+                        <a asp-action="Details" asp-route-id="@instructor.InstructorID">Detailid</a> |
+                        <a asp-action="Delete" asp-route-id="@instructor.InstructorID">Kustuta</a>
+                        </td>
 
                 </tr>
 
