@@ -1,0 +1,84 @@
+﻿@model Tallinnarakenduskolledz.Models.Instructor
+@{
+    ViewData["Title"] = "lisa õps";
+
+}
+<h1>lisa õps</h1>
+<h4></h4>
+<hr/>
+<div calss="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HireDate"></label>
+                <input asp-for="HireDate" class="form-control" />
+                <span asp-validation-for="HireDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfCars"></label>
+                <input asp-for="AmountOfCars" class="form-control" />
+                <span asp-validation-for="AmountOfCars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="homes"></label>
+                <input asp-for="homes" class="form-control" />
+                <span asp-validation-for="homes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficeAssignment"></label>
+                <input asp-for="OfficeAssignment" class="form-control" />
+                <span asp-validation-for="OfficeAssignment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfClass"></label>
+                <input asp-for="TypeOfClass" class="form-control" />
+                <span asp-validation-for="TypeOfClass" class="text-danger"></span>
+            </div>
+            <div class="from-group">
+                </div class="col-md-offset2 col-md-10">
+                
+                <table>
+                    <tr>
+                        @{
+                            int count = 0;
+                            List<Tallinnarakenduskolledz.Models.AssignedCourseData> assignedCourses = ViewBag.Courses;
+                            
+                            if (assignedCourses != null)
+
+                            foreach (var course in assignedCourses)
+                            {
+                                if (count % 3 == 0 && count != 0)
+                                {
+                                    @:</tr><tr>
+                                }
+                                @:<td>
+                                <input 
+                                    type="checkbox"
+                                    name="selectedCourses"
+                                    value="@course.CourseID"
+                                    @(Html.Raw(course.Assigned ? "checked=\"checked\"" : ""))
+                                />
+                            }
+                        }
+                    </tr>
+                </table>
+                <div>
+                    <input type="submit" value="lisa" class="btn btn-primary" />
+                </div>
+                <div>
+                    <a asp-action="Index" class="btn btn-danger">tühista lisamine</a>
+                </div>
+        </form>
+    </div>
+</div>

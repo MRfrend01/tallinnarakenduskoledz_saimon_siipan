@@ -36,7 +36,7 @@ namespace Tallinnarakenduskolledz.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Instructor instructor, string selectedCourses)
         {
-            if (selectedCourses == null)
+            if (selectedCourses != null)
             {
                 instructor.CourseAssignments = new List<CourseAssignment>();
                 foreach (var courses in selectedCourses)
@@ -50,6 +50,7 @@ namespace Tallinnarakenduskolledz.Controllers
                     instructor.CourseAssignments.Add(courseToAdd);
                 }
             }
+            ModelState.Remove("selectedCourses");
             if (ModelState.IsValid)
             {
                 _context.Add(instructor);
