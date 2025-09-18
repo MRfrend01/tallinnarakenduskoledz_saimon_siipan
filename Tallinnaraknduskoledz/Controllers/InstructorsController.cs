@@ -60,6 +60,32 @@ namespace Tallinnarakenduskolledz.Controllers
             populateAssignedCourseData(instructor);
             return View(instructor);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delte(int? id, bool? saveChangesError = false)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var deletableInstructor = await _context.Instructors
+                .SingleAsync(i => i.InstructorID == id);
+            if (deletableInstructor == null)
+            {
+                return NotFound();
+            }
+            return View(deletableInstructor);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConFirmed(int id)
+        {
+            Instructor deletableInstructor = await _context.Instructors
+                .SingleAsync(i => i.InstructorID == id);
+            _context.Instructors.Remove(deletableInstructor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
         private void populateAssignedCourseData(Instructor instructor)
         {
             var allCourses = _context.Courses;
