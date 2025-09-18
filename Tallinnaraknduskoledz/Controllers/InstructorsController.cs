@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Tallinnarakenduskolledz.Data;
 using Tallinnarakenduskolledz.Models;
 
@@ -22,5 +23,61 @@ namespace Tallinnarakenduskolledz.Controllers
                 .ToListAsync();
             return View(vm);
         }
+        // GET: Instructors/Details/5
+
+        [HttpGet]
+        public IActionResult create()
+        {
+            var instructor = new Instructor();
+            instructor.CourseAssignments = new List<CourseAssignment>();
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Instructor instructor, string selectedCourses)
+        {
+            if (selectedCourses == null)
+            {
+                instructor.CourseAssignments = new List<CourseAssignment>();
+                foreach (var courses in selectedCourses)
+                {
+                    var courseToAdd = new CourseAssignment
+                    {
+                        InstructorID = instructor.InstructorID,
+                        CourseID = courses
+
+                    };
+                    instructor.CourseAssignments.Add(courseToAdd);
+                }
+            }
+            if (ModelState.IsValid)
+            {
+                _context.Add(instructor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("index");
+            }
+            populateAssignedCourseData(instructor);
+            return View(instructor);
+        }
+        private void populateAssignedCourseData(Instructor instructor)
+        {
+            var allCourses = _context.Courses;
+            var instructorCourses = new HashSet<int>(instructor.CourseAssignments.Select(c => c.CourseID));
+            var vm = new List<AssignedCourseData>();
+            foreach (var course in allCourses)
+            {
+                vm.Add(new AssignedCourseData
+                {
+                    CourseID = course.CourseID,
+                    Title = course.Title,
+                    Assigned = instructorCourses.Contains(course.CourseID)
+                });
+            }
+            ViewData["Courses"] = vm;
+        }
     }
 }
+
+
+
+
