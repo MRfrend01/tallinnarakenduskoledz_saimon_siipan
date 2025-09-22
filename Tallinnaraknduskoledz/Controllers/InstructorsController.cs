@@ -62,7 +62,7 @@ namespace Tallinnarakenduskolledz.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Delte(int? id, bool? saveChangesError = false)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace Tallinnarakenduskolledz.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConFirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             Instructor deletableInstructor = await _context.Instructors
                 .SingleAsync(i => i.InstructorID == id);
@@ -102,8 +102,49 @@ namespace Tallinnarakenduskolledz.Controllers
             }
             ViewData["Courses"] = vm;
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id, string? selectedCourses)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var instructorToUpdate = await _context.Instructors
+
+               
+
+                .SingleAsync(i => i.InstructorID == id);
+            return View(instructorToUpdate);
     }
-}
+        [HttpPost]
+        public async Task<IActionResult> Edit(Instructor instructor, string selectedCourses)
+        {
+            if (selectedCourses != null)
+            {
+                instructor.CourseAssignments = new List<CourseAssignment>();
+                foreach (var courses in selectedCourses)
+                {
+                    var courseToAdd = new CourseAssignment
+                    {
+                        InstructorID = instructor.InstructorID,
+                        CourseID = courses
+
+                    };
+                    instructor.CourseAssignments.Add(courseToAdd);
+                }
+            }
+            ModelState.Remove("selectedCourses");
+            if (ModelState.IsValid)
+            {
+                _context.Add(instructor);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("index");
+            }
+            //populateAssignedCourseData(instructor);
+            return View(instructor);
+        }
+    }
+    }
 
 
 

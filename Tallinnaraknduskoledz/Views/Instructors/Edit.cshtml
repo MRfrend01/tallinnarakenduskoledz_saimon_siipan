@@ -1,0 +1,74 @@
+﻿@model Tallinnarakenduskolledz.Models.Instructor
+@{
+    ViewData["Title"] = "muuda õpetaja";
+}
+<h1>muuda õpetaja</h1>
+<h3>
+    muuda õpetaja andmeid
+<div>
+    <form asp-action="Edit">
+        <div class="form-horizontal">
+            <hr />
+            <input type="hidden" asp-for="InstructorID" />
+            <div class="form-group">
+                <label asp-for="LastName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                <label asp-for="FirstName" class="col-md-2 control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label asp-for="AmountOfCars" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                        <input asp-for="AmountOfCars" class="form-control" />
+                        <span asp-validation-for="AmountOfCars" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label asp-for="CourseAssignments" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                        <input asp-for="CourseAssignments" class="form-control" />
+                        <span asp-validation-for="CourseAssignments" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label asp-for="HireDate" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                        <input asp-for="HireDate" class="form-control" />
+                        <span asp-validation-for="HireDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label asp-for="TypeOfClass" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                        <input asp-for="TypeOfClass" class="form-control" />
+                        <span asp-validation-for="TypeOfClass" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="
+</div>
+            form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvesta" class="btn btn-primary" />
+            </div>
+        </div>
+</div>
+    </form>
+<div>
+    <a asp-action="Index">Tagasi nimekirja</a>
+
+</div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
