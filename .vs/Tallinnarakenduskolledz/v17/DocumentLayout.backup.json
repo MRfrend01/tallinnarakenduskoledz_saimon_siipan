@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|solutionrelative:tallinnaraknduskoledz\\controllers\\instructorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|c:\\users\\saimo\\source\\repos\\trkclean\\tallinnaraknduskoledz\\views\\instructors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|solutionrelative:tallinnaraknduskoledz\\views\\instructors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|c:\\users\\saimo\\source\\repos\\trkclean\\tallinnaraknduskoledz\\views\\instructors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|solutionrelative:tallinnaraknduskoledz\\views\\instructors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|c:\\users\\saimo\\source\\repos\\trkclean\\tallinnaraknduskoledz\\views\\instructors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|solutionrelative:tallinnaraknduskoledz\\views\\instructors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BA8E40-F56B-55C1-4043-E3C5CDE5BD5F}|Tallinnaraknduskoledz\\Tallinnarakenduskolledz.csproj|c:\\users\\saimo\\source\\repos\\trkclean\\tallinnaraknduskoledz\\views\\instructors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -118,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 207,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,39 +130,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml",
               "RelativeDocumentMoniker": "Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml*",
-              "RelativeToolTip": "Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml*",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAiwCIAAAAGAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml",
+              "RelativeToolTip": "Tallinnaraknduskoledz\\Views\\Instructors\\Delete.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAiwCEAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-18T10:38:26.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
-              "RelativeDocumentMoniker": "Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
-              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
-              "RelativeToolTip": "Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAACAAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-18T09:02:57.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Index.cshtml",
               "RelativeDocumentMoniker": "Tallinnaraknduskoledz\\Views\\Instructors\\Index.cshtml",
               "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Index.cshtml",
               "RelativeToolTip": "Tallinnaraknduskoledz\\Views\\Instructors\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAABmAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAEwDUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-16T20:20:50.79Z",
               "EditorCaption": ""
@@ -185,11 +172,24 @@
               "Title": "InstructorsController.cs",
               "DocumentMoniker": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs",
               "RelativeDocumentMoniker": "Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs",
-              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs*",
-              "RelativeToolTip": "Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs*",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAlwEQAAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs",
+              "RelativeToolTip": "Tallinnaraknduskoledz\\Controllers\\InstructorsController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAvwFsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T19:44:37.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
+              "RelativeDocumentMoniker": "Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
+              "ToolTip": "C:\\Users\\saimo\\source\\repos\\TRKclean\\Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
+              "RelativeToolTip": "Tallinnaraknduskoledz\\Views\\Instructors\\Create.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAACAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-18T09:02:57.577Z",
               "EditorCaption": ""
             },
             {
