@@ -1,0 +1,61 @@
+﻿@model Tallinnarakenduskolledz.Models.Instructor
+@{
+    ViewData["Title"] = "õpetaja detailid";
+}
+<h1>õpetaja detailid</h1>
+<h3>
+    vaata õpetaja andmeid
+<div>
+        <div class="form-horizontal">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AmountOfCars)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AmountOfCars)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CourseAssignments)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CourseAssignments)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HireDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HireDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TypeOfClass)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TypeOfClass)
+                </dd>
+            </dl>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.InstructorID">muuda</a> |
+                <a asp-action="Index">tagasi nimekirja</a>
+            </div>
+        </div>
+</div>
+</h3>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

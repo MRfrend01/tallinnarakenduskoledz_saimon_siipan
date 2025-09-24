@@ -143,8 +143,10 @@ namespace Tallinnarakenduskolledz.Controllers
             //populateAssignedCourseData(instructor);
             return View(instructor);
         }
+        
     }
-    }
+
+}
 
 
 
