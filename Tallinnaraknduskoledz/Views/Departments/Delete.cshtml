@@ -1,0 +1,63 @@
+﻿@model Tallinnarakenduskolledz.Models.Department
+@{
+    ViewData["Title"] = "Eemalda osakond";
+}
+<h1>eemalda osakond</h1>
+<h3>Kas oled kindel, et soovid eemaldada järgmise osakonna?</h3>
+<h2>@Html.DisplayFor(modelItem => Model.Name)</h2>
+
+@if (ViewBag.action == "Delete")
+{
+    <P>
+        <h3>Kustuta osakond:</h3>
+    </P>
+}
+else
+{
+    <p>
+        <h3>Osakonna andmed</h3>
+    </p>
+}
+<div>
+    <div class="form-horizontal">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Budget)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Budget)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Administrator)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Administrator)
+            </dd>
+        </dl>
+        @if (ViewBag.action == "Delete")
+        {
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="RowVersion" />
+                <input type="hidden" asp-for="DepartmentID" />
+                <input type="submit" value="Kustuta" class="btn btn-danger" /> | <a asp-action="Index">Tühista</a>
+            </form>
+        }
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="DepartmentID" />
+            <input type="submit" value="Kustuta" class="btn btn-danger" /> | <a asp-action="Index">Tühista</a>
+        </form>
+    </div>
+</div>
