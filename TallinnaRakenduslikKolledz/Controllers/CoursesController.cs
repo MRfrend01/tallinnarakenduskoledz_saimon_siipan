@@ -95,5 +95,6 @@ namespace TallinnaRakenduslikKolledz.Controllers
             ViewBag.DepartmentID = new SelectList(departmentsQuery.AsNoTracking(), "DepartmentID"
                 , "Name", selectedDepartment);
         }
+
     }
 }
