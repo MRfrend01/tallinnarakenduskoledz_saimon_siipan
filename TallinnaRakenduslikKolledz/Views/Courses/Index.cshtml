@@ -17,7 +17,7 @@
 			<th>@Html.DisplayNameFor(model => model.Title)</th>
 			<th>@Html.DisplayNameFor(model => model.Credits)</th>
 			<th>@Html.DisplayNameFor(model => model.Department.Name)</th>
-			<th>@Html.DisplayNameFor(model => model.Department.Administrator.FullName)</th>
+            @*<th>@Html.DisplayNameFor(model => model.Department.Administrator.FullName)</th>*@
 			<th>Tööriistad</th>
 		</tr>
 	</thead>
@@ -26,23 +26,27 @@
 		@foreach (var course in Model)
 		{
 			<tr>
+			<td>
 				@Html.DisplayFor(modelItem => course.CourseId)
-			</tr>
-			<tr>
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => course.Title)
-			</tr>
-			<tr>
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => course.Credits)
-			</tr>
-			<tr>
+			</td>
+			<td>
 				@Html.DisplayFor(modelItem => course.Department.Name)
-			</tr>
-			<tr>
-				@Html.DisplayFor(modelItem => course.Department.Administrator.FullName)
-			</tr>
-			<tr>
-				<a asp-action="Delete" asp-route-id="@course.CourseId">Kustuta</a>
-			</tr>
+			</td>
+@*
+	//	<td>
+			//	@Html.DisplayFor(modelItem => course.Department.Administrator.FullName)
+		//	</td>
+*@				<td>
+					<a asp-action="Delete" asp-route-id="@course.CourseId">Kustuta</a>
+				</td>
+		</tr>
+
 		}
 	</tbody>
 

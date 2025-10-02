@@ -24,7 +24,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewData["InstructorID"] = new SelectList(_context.Instructors, "Id", "FullName");
+            ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName");
             return View();
         }
 
