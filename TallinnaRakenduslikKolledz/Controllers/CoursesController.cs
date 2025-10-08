@@ -53,7 +53,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         }
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> create([Bind("DepartmentID,Name,Budget,StartDate,InstructorID,Administrator,Courses,RowVersion,IsActive,PhoneNumber,EndDate")] Department department)
+        public async Task<IActionResult> EditConfirmed([Bind("")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
 
             return RedirectToAction("Index");
         }
-    
+    }
 
 
         [HttpPost]
