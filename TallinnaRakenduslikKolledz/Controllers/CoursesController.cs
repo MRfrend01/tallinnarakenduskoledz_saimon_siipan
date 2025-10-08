@@ -23,19 +23,22 @@ namespace TallinnaRakenduslikKolledz.Controllers
         [HttpGet]
         public IActionResult create()
         {
+            ViewData["action"] = "Create";
             populateDepartmentsDropDownlist();
             return View();
         }
 
         [HttpGet]
-        public IActionResult update() 
+        public IActionResult Edit(int id) 
         {
+            ViewData["action"] = "Edit";
             populateDepartmentsDropDownlist();
-            return View();
+            var course = _context.Courses.Find(id);
+            return View("Create");
 
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> create(Course course)
         {
@@ -48,6 +51,20 @@ namespace TallinnaRakenduslikKolledz.Controllers
             populateDepartmentsDropDownlist(course.DepartmentID);
             return View(course);
         }
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> create([Bind("DepartmentID,Name,Budget,StartDate,InstructorID,Administrator,Courses,RowVersion,IsActive,PhoneNumber,EndDate")] Department department)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Departments.Update(department);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
+    
 
 
         [HttpPost]
