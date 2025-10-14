@@ -1,46 +1,43 @@
 ﻿@model TallinnaRakenduslikKolledz.Models.Course
-@{
-    ViewData["Title"] = "Kustuta kursus";
-}
-<h1>Kustuta kursus</h1>
-<h3>Kas oled kindel, et soovid selle kursuse kustutada?</h3>
-<div>
-    <h4>Kursus</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Credits)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Credits)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Department.Name)
-        </dd>
-    </dl>
 
-        @if (ViewData["RequestedView"] == "Details")
-        {
-            <a asp-action="index" class="btn btn-primary">back</a>
-            <a asp-action="Clone" asp-route-id="@Model.Department" class="btn btn-primary">Clone</a>
-        }
-        else
-        {
-            <input asp-action="DeleteConfirmed"
-                   asp-controller="Courses"
-                   type="submit"
-                   class="btn btn-primary"
-                   value="Delete" />
-            <a asp-action="index" class="btn btn-primary">Cancel</a>
-        }
-    
+
+@{
+	ViewData["Title"] = "Kustuta kursus";
+}
+
+<h2>@Html.DisplayFor(modelItem => Model.Title)</h2>
+
+@if (ViewBag.action == "Delete")
+{
+	<P>
+		<h3>Kustuta kursus:</h3>
+	</P>
+}
+else
+{
+	<p>
+		<h3>Kursuse andmed</h3>
+	</p>
+}
+<div>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.CourseId)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.CourseId)</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Title)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Title)</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Credits)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Credits)</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Department)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Department)</dt>
+		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Enrollments)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Enrollments)</dt>
+	</dl>
+	@if (ViewBag.action == "Delete")
+	{
+		<form asp-action="Delete">
+			<input type="hidden" asp-for="CourseId" />
+			<input type="submit" value="Kustuta" class="btn btn-danger" /> | <a asp-action="Index">Tühista</a>
+		</form>
+	}
 </div>
