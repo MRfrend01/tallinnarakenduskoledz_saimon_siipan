@@ -3,6 +3,18 @@
 @{
 	ViewData["Title"] = "Osakond";
 }
+@if (ViewBag.action == "Delete")
+{
+	<P>
+		<h3>Kustuta osakond:</h3>
+	</P>
+}
+else
+{
+	<p>
+		<h3>Osakonna andmed</h3>
+	</p>
+
 
 <h2>Asuta uus osakond</h2>
 <hr />
