@@ -82,6 +82,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
             return View(nameof(Delete), course);
         }
 
+
         private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
         {
             var departmentsQuery = from d in _context.Departments
