@@ -1,0 +1,45 @@
+﻿@model TallinnaRakenduslikKolledz.Models.Delinquent
+@{
+    ViewData["Title"] = "Delete Delinquent";
+}
+<h1>Delete Delinquent</h1>
+<h4>oled kindel et tahad kustudada</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <div class="form-group">
+                <input type="hidden" asp-for="DelinquentId" />
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" readonly />
+            </div>
+            <div class="form-group
+">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" readonly />
+            </div>
+            <div class="form-group
+    ">
+                <label asp-for="Violation" class="control-label"></label>
+                <input asp-for="Violation" class="form-control" readonly />
+            </div>
+            <div class="form-group
+    ">
+                <label asp-for="situation" class="control-label"></label>
+                <input asp-for="situation" class="form-control" readonly />
+            </div>
+            <div class="form-group
+    ">
+                <label asp-for="TeacherOrStudent" class="control-label"></label>
+                <input asp-for="TeacherOrStudent" class="form-control" readonly />
+            </div>
+            <div class="form-group
+">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home</a>

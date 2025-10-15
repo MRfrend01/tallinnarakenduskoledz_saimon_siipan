@@ -33,6 +33,30 @@ namespace TallinnaRakenduslikKolledz.Controllers
         {
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || _context.Delinquents == null) { return NotFound(); }
+            var delinquent = await _context.Delinquents
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.DelinquentId == id);
+            if (delinquent == null) { return NotFound(); }
+            return View(delinquent);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (_context.Delinquents == null) { return Problem("Entity set 'SchoolContext.Delinquents'  is null."); }
+            var delinquent = await _context.Delinquents.FindAsync(id);
+            if (delinquent != null)
+            {
+                _context.Delinquents.Remove(delinquent);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 
 }
