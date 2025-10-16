@@ -22,28 +22,27 @@ namespace TallinnaRakenduslikKolledz.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["InstructorID"] = new SelectList(_context.Instructors, "Id", "FullName");
-            return View();
+            ViewData["action"] = "Create";
+            ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName");
+            return View("Create");
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Budget,StartDate,RowVersion,InstructorID,IsActive,EndDate,PhoneNumber")] Department department)
+        public async Task<IActionResult> Create([Bind("DepartmentID,Name,Budget,StartDate,RowVersion,InstructorID")] Department department)
         {
-
-            department.StartDate = DateTime.Now;
+            ViewData["action"] = "Create";
             if (ModelState.IsValid)
             {
-                _context.Departments.Add(department);
+                _context.Add(department);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
             ViewData["InstructorID"] = new SelectList(_context.Instructors, "Id", "FullName", department.InstructorID);
-            return View(department);
+            return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
@@ -83,6 +82,28 @@ namespace TallinnaRakenduslikKolledz.Controllers
 
             var department = await _context.Departments.FirstOrDefaultAsync(d => d.DepartmentID == id);
             return View(nameof(Delete), department);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {ViewData["action"] = "Edit";
+            var deparment = await _context.Departments.FirstOrDefaultAsync(m => m.DepartmentID == id);
+            return View("Create",deparment);
+        }
+
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditConfirmed(int? id, [Bind("DepartmentID,Name,Budget,StartDate,InstructorID,Courses,RowVersion,IsActive,EndDate,PhoneNumber")] Department department)
+        {
+            department.DepartmentID = (int)id;
+            if (ModelState.IsValid)
+            {
+                _context.Departments.Update(department);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
