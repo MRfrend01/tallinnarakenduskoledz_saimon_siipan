@@ -31,10 +31,12 @@ else
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Department)</dt>
 		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Department)</dt>
 		<dt class="col-sm-2">@Html.DisplayNameFor(Model => Model.Enrollments)</dt>
-		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Enrollments)</dt>
+		<dt class="col-sm-2">@Html.DisplayFor(Model => Model.Enrollments)</dt> 
 	</dl>
 	@if (ViewBag.action == "Delete")
 	{
+		
+		
 		<form asp-action="Delete">
 			<input type="hidden" asp-for="CourseId" />
 			<input type="submit" value="Kustuta" class="btn btn-danger" /> | <a asp-action="Index">Tühista</a>

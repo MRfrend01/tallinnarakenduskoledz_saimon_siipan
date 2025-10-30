@@ -16,6 +16,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
 
         public IActionResult Index()
         {
+
             var courses = _context.Courses.Include(c => c.Department)
                 .AsNoTracking();
 
@@ -25,6 +26,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["action"] = "Create";
             PopulateDepartmentsDropDownList();
             return View();
         }
@@ -40,8 +42,8 @@ namespace TallinnaRakenduslikKolledz.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
-            ViewBag["action"] = "Delete";
 
+            ViewData["action"] = "Delete";
             if (id == null || _context.Courses == null) { return NotFound(); }
 
             var courses = await _context.Courses
@@ -59,7 +61,7 @@ namespace TallinnaRakenduslikKolledz.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
 
-            ViewBag["action"] = "Delete";
+            ViewData["action"] = "Details";
 
             if (_context.Courses == null) { return NotFound(); }
 
